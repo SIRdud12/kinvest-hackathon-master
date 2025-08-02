@@ -1,0 +1,282 @@
+/* Styles responsifs pour les écrans moyens */
+@media (max-width: 1024px) {
+    .hero h1, .presentation h1 {
+        font-size: 46px;
+    }
+    
+    .hero p, .presentation p {
+        font-size: 20px;
+        max-width: 700px;
+    }
+    
+    .budget-btn, .download-btn {
+        font-size: 16px;
+        padding: 12px 25px;
+    }
+    
+    .phone-mockup, .phone-showcase {
+        max-width: 300px;
+    }
+    
+    .store-badge {
+        width: 250px;
+    }
+    
+    .store-badge img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .store-badge span {
+        font-size: 18px;
+    }
+    
+    .app-stores {
+        left: 60px;
+    }
+    
+    .theme-switcher {
+        top: 60px;
+        right: 60px;
+    }
+    
+    .carousel-arrow {
+        width: 60px;
+        height: 60px;
+        margin: 0 20px;
+    }
+    
+    .features-preview {
+        gap: 30px;
+    }
+    
+    .feature {
+        width: 280px;
+        padding: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 15px;
+    }
+    
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .brand-name {
+        font-size: 18px;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .try-now-btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+    
+    .hero {
+        height: auto;
+        padding: 60px 15px 120px;
+    }
+    
+    .hero h1, .presentation h1 {
+        font-size: 36px;
+        margin-bottom: 15px;
+    }
+    
+    .hero p, .presentation p {
+        font-size: 18px;
+        padding: 0 15px;
+        margin-bottom: 30px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 40px;
+    }
+    
+    .budget-btn, .download-btn {
+        width: 90%;
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+    
+    .phone-mockup, .phone-showcase {
+        max-width: 260px;
+    }
+    
+    .app-stores {
+        position: relative;
+        left: 0;
+        bottom: 0;
+        align-items: center;
+        margin: 0 auto;
+        padding-bottom: 40px;
+    }
+    
+    .store-badge {
+        width: 90%;
+        max-width: 260px;
+        padding: 12px 20px;
+    }
+    
+    .store-badge img {
+        width: 35px;
+        height: 35px;
+        margin-right: 15px;
+    }
+    
+    .store-badge span {
+        font-size: 16px;
+    }
+    
+    /* Présentation section responsive */
+    .presentation {
+        padding: 60px 15px;
+    }
+    
+    .theme-switcher {
+        top: 20px;
+        right: 20px;
+        gap: 15px;
+        padding: 8px 15px;
+    }
+    
+    .theme-option {
+        font-size: 16px;
+        padding: 3px 6px;
+    }
+    
+    .carousel-arrow {
+        width: 50px;
+        height: 50px;
+        margin: 0 15px;
+    }
+    
+    .carousel-arrow svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .indicator {
+        width: 12px;
+        height: 12px;
+    }
+    
+    .features-preview {
+        margin-top: 40px;
+        gap: 20px;
+    }
+    
+    .feature {
+        width: 100%;
+        max-width: 300px;
+        padding: 20px;
+    }
+    
+    .feature-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 15px;
+    }
+    
+    .feature h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .feature p {
+        font-size: 14px;
+    }
+    
+    /* Barre de progression */
+    .scroll-progress-container {
+        top: 60px;
+    }
+}
+
+/* Pour les très petits écrans */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 8px 10px;
+    }
+    
+    .logo {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .brand-name {
+        font-size: 16px;
+    }
+    
+    .try-now-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    
+    .hero h1, .presentation h1 {
+        font-size: 28px;
+    }
+    
+    .hero p, .presentation p {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+    
+    .budget-btn, .download-btn {
+        width: 95%;
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+    
+    .phone-mockup, .phone-showcase {
+        max-width: 220px;
+    }
+    
+    .carousel-arrow {
+        width: 40px;
+        height: 40px;
+        margin: 0 10px;
+    }
+    
+    .carousel-arrow svg {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .theme-option {
+        font-size: 14px;
+    }
+    
+    .indicator {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .features-preview {
+        margin-top: 30px;
+    }
+    
+    .feature {
+        padding: 15px;
+    }
+    
+    .feature-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .feature h3 {
+        font-size: 18px;
+    }
+    
+    .feature p {
+        font-size: 13px;
+    }

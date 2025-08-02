@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kinvest - Gestion Intelligente des Dépenses Personnelles</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">  
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <script src="/js/main.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+          <div class="logo">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 5V19M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="brand-name">Kinvest</div>
+        </div>
+      
+        <div class="nav-links">
+            <a href="/annee/<%= (annee-2) %>"><</a>            
+            <a href="/annee/<%= (annee-1) %>"><%= (annee-1) %></a>
+            <b><%= annee %></b>
+            <a href="/annee/<%= (parseInt(annee)+1) %>"><%= (parseInt(annee)+1) %></a>
+            <a href="/annee/<%= (parseInt(annee)+2) %>">></a>
+        </div>
+      
+        <a href="/login">
+            <span><% if (user) { %><%= user.email %><% } else { %>non connecté<% } %></span>
+            <a href="/logout">
+                <button class="try-now-btn">Se Déconnecter</button>
+            </a>
+        </a>
+    </nav>
+
+    <section class="hero" id="hero">
+        <h2>Conseil par IA : question</h2>
+        <form action="/conseil/reponse" name="form_question_ia" class="validated-form" method="POST" novalidate>
+          <input type="hidden" name="annee" value="<%= annee %>">
+          <div class="mb-3">
+                <label class="form-lable" for="question">Question</label>
+                <textarea class = "form-control" name="question" id="question" required value=""></textarea>
+            </div>
+            <button type="submit" class="budget-btn">Répondre</button>
+        </form>
+    </section>
+  
+</body>
+</html>

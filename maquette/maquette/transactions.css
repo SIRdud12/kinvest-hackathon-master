@@ -1,0 +1,726 @@
+/* Styles pour la page des transactions */
+
+/* Variables de couleurs et styles généraux */
+:root {
+    --primary-color: #2ecc71;
+    --primary-dark: #27ae60;
+    --primary-light: #a7f3d0;
+    --secondary-color: #3498db;
+    --red-color: #e74c3c;
+    --red-dark: #c0392b;
+    --text-color: #333;
+    --text-light: #666;
+    --text-lighter: #999;
+    --bg-color: #f5f8fa;
+    --white: #fff;
+    --border-color: #eaeaea;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --transition: all 0.3s ease;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Layout de la page des transactions */
+.transactions-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* En-tête de la page */
+.transactions-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.transactions-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* Bouton d'ajout */
+.add-transaction-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.add-transaction-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-icon {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Navigation des mois */
+.month-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.nav-arrow {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    transition: var(--transition);
+}
+
+.nav-arrow:hover {
+    color: var(--text-color);
+}
+
+.nav-arrow svg {
+    width: 20px;
+    height: 20px;
+}
+
+.month-selector {
+    position: relative;
+    padding: 0 20px;
+}
+
+.current-month {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 5px 15px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: var(--transition);
+}
+
+.current-month:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.month-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 15px;
+    z-index: 100;
+    margin-top: 5px;
+    display: none;
+}
+
+.month-dropdown.active {
+    display: block;
+}
+
+.year-selector {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.year-nav {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    transition: var(--transition);
+}
+
+.year-nav svg {
+    width: 16px;
+    height: 16px;
+}
+
+.current-year {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.months-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.month-item {
+    text-align: center;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 14px;
+}
+
+.month-item:hover {
+    background-color: var(--primary-light);
+}
+
+.month-item.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* Filtres de transactions */
+.transaction-filters {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 15px;
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 5px;
+    box-shadow: var(--shadow);
+}
+
+.filter-item {
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 14px;
+    text-align: center;
+    flex: 1;
+}
+
+.filter-item:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.filter-item.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* Liste des transactions */
+.transactions-list {
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.transaction-date-group {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.transaction-date-group:last-child {
+    border-bottom: none;
+}
+
+.date-header {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-lighter);
+    padding: 8px 16px;
+}
+
+.transaction-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    position: relative;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.transaction-item:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.transaction-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    background-color: rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.transaction-icon img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.transaction-details {
+    flex: 1;
+}
+
+.transaction-name {
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 3px;
+    font-size: 15px;
+}
+
+.transaction-amount {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+
+.income .transaction-amount {
+    color: var(--primary-color);
+}
+
+.expense .transaction-amount {
+    color: var(--red-color);
+}
+
+.transaction-category, .transaction-time {
+    font-size: 13px;
+    color: var(--text-lighter);
+}
+
+.transaction-category {
+    float: left;
+}
+
+.transaction-time {
+    float: right;
+}
+
+/* Résumé des transactions */
+.transactions-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.summary-card {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.summary-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.summary-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.summary-icon img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.summary-details {
+    flex: 1;
+}
+
+.summary-title {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 5px;
+}
+
+.summary-amount {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.income .summary-amount {
+    color: var(--primary-color);
+}
+
+.expense .summary-amount {
+    color: var(--red-color);
+}
+
+.balance .summary-amount {
+    color: var(--secondary-color);
+}
+
+/* Modal d'ajout de transaction */
+.transaction-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    display: none;
+}
+
+.transaction-modal.active {
+    display: block;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--white);
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: var(--text-lighter);
+    transition: var(--transition);
+}
+
+.close-modal:hover {
+    color: var(--red-color);
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+/* Formulaire d'ajout de transaction */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.transaction-type-selector {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.type-option {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+}
+
+.type-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.type-option.income {
+    color: var(--primary-color);
+}
+
+.type-option.expense {
+    color: var(--red-color);
+}
+
+.type-option.income.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+}
+
+.type-option.expense.active {
+    background-color: var(--red-color);
+    color: var(--white);
+    border-color: var(--red-color);
+}
+
+.type-option.active img {
+    filter: brightness(0) invert(1);
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 15px;
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(46, 204, 113, 0.1);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.cancel-btn,
+.save-btn {
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 15px;
+}
+
+.cancel-btn {
+    background-color: #f2f2f2;
+    border: none;
+    color: var(--text-color);
+}
+
+.cancel-btn:hover {
+    background-color: #e6e6e6;
+}
+
+.save-btn {
+    background-color: var(--primary-color);
+    border: none;
+    color: var(--white);
+}
+
+.save-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Styles responsifs */
+@media (max-width: 768px) {
+    .transactions-summary {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .transaction-item {
+        padding: 10px 12px;
+    }
+    
+    .month-dropdown {
+        width: 260px;
+    }
+    
+    .transactions-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    
+    .transactions-header h1 {
+        text-align: center;
+    }
+    
+    .add-transaction-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .modal-container {
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .current-month {
+        font-size: 16px;
+    }
+    
+    .transaction-filters {
+        padding: 3px;
+    }
+    
+    .filter-item {
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+    
+    .summary-card {
+        padding: 12px;
+    }
+    
+    .summary-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .summary-icon img {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .cancel-btn, .save-btn {
+        width: 100%;
+    }
+}
+
+/* Animation pour les éléments */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.transaction-item {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+/* Message si aucune transaction */
+.no-transactions {
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--text-lighter);
+}
+
+.no-transactions p {
+    margin-bottom: 15px;
+}
+
+/* Styles pour les catégories spécifiques */
+.income[data-category="salary"] .transaction-icon {
+    background-color: rgba(46, 204, 113, 0.1);
+}
+
+.income[data-category="freelance"] .transaction-icon {
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+.income[data-category="investment"] .transaction-icon {
+    background-color: rgba(155, 89, 182, 0.1);
+}
+
+.income[data-category="refund"] .transaction-icon {
+    background-color: rgba(230, 126, 34, 0.1);
+}
+
+.expense[data-category="housing"] .transaction-icon {
+    background-color: rgba(231, 76, 60, 0.1);
+}
+
+.expense[data-category="food"] .transaction-icon {
+    background-color: rgba(52, 73, 94, 0.1);
+}
+
+.expense[data-category="transport"] .transaction-icon {
+    background-color: rgba(241, 196, 15, 0.1);
+}
+
+.expense[data-category="utilities"] .transaction-icon {
+    background-color: rgba(26, 188, 156, 0.1);
+}
+
+/* Animation pour le modal */
+.modal-container {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.transaction-modal.active .modal-container {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+/* Styles pour filtrer les transactions */
+.transaction-item.hidden {
+    display: none;
+}

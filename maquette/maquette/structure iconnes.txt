@@ -1,0 +1,21 @@
+
+
+1. `icons/salary.png` - Icône pour les salaires
+2. `icons/freelance.png` - Icône pour le travail freelance
+3. `icons/investment.png` - Icône pour les investissements
+4. `icons/refund.png` - Icône pour les remboursements
+5. `icons/gift.png` - Icône pour les cadeaux
+6. `icons/other_income.png` - Icône pour les autres revenus
+7. `icons/housing.png` - Icône pour le logement
+8. `icons/food.png` - Icône pour l'alimentation
+9. `icons/transport.png` - Icône pour le transport
+10. `icons/utilities.png` - Icône pour les factures
+11. `icons/leisure.png` - Icône pour les loisirs
+12. `icons/health.png` - Icône pour la santé
+13. `icons/education.png` - Icône pour l'éducation
+14. `icons/shopping.png` - Icône pour le shopping
+15. `icons/other_expense.png` - Icône pour les autres dépenses
+16. `icons/income.png` - Icône générique pour les revenus
+17. `icons/expense.png` - Icône générique pour les dépenses
+18. `icons/balance.png` - Icône pour le solde
+

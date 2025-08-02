@@ -1,0 +1,242 @@
+.acceuil-pc,
+.acceuil-pc * {
+  box-sizing: border-box;
+}
+.acceuil-pc {
+  background: #ffffff;
+  height: 1024px;
+  position: relative;
+  overflow: auto;
+}
+.btn-app {
+  background-color: #00856f;
+  color: white;
+}
+a {
+  color : #00856f;
+  text-decoration: none;
+}
+.rectangle-2 {
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(155, 188, 173, 0.28) 100%
+  );
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.image-1 {
+  width: 202.64px;
+  height: 408.56px;
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  top: 653px;
+  object-fit: cover;
+  aspect-ratio: 202.64/408.56;
+}
+.main-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  left: 35px;
+  top: 100px;
+  box-sizing:border-box;
+  width:100%;
+}
+.gestion-intelligente-des-d-pense-personnellles {
+  color: #000000;
+  text-align: center;
+  font-family: "SpaceGrotesk-Bold", sans-serif;
+  font-size: 70px;
+  font-weight: 700;
+  position: relative;
+  align-self: stretch;
+}
+.avec-notre-plateforme-prenez-l-avantage-des-outils-intuitifs-pour-vous-guider-dans-vos-d-cision-d-investisement {
+  color: #000000;
+  text-align: center;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  position: relative;
+  width: 1020px;
+  height: 47px;
+}
+.button-button {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  left: 485px;
+  top: 535px;
+}
+.button {
+  background: #59b170;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 210px;
+  height: 52px;
+  position: relative;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25),
+    0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.budget-de-l-ann-e {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  position: relative;
+}
+.button2 {
+  background: #ffffff;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 210px;
+  height: 52px;
+  position: relative;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25),
+    0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.image {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 249, 249, 0) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  width: 203px;
+  height: 409.63px;
+  position: absolute;
+  left: 619px;
+  top: 642px;
+}
+.nav {
+  display: flex;
+  flex-direction: row;
+  gap: 95px;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  top: 38px;
+}
+.logo {
+  flex-shrink: 0;
+  width: 181.12px;
+  height: 63px;
+  position: relative;
+  object-fit: cover;
+  aspect-ratio: 181.12/63;
+  left: 70px;
+}
+.text-1 {
+  display: flex;
+  flex-direction: row;
+  gap: 48px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  min-width: 50px;
+  font-size: 20px;
+}
+.consulter-les-d-penses {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  position: relative;
+}
+.supprimer-d-pence {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  position: relative;
+}
+.supprimer-budget {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  position: relative;
+}
+.modifier-budget {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  position: relative;
+}
+.bouton-c {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  position: relative;
+  margin-left: -70px;
+}
+.se-connecter {
+  text-align: left;
+  font-family: "Inter-ExtraBold", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  position: relative;
+}
+.button3 {
+  background: #59b170;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px;
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 210px;
+  height: 52px;
+  position: relative;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25),
+    0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.vector-2 {
+  width: 1904px;
+  height: 1212.51px;
+  position: absolute;
+  left: -622px;
+  top: -77.51px;
+  overflow: visible;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kinvest - Gestion Intelligente des Dépenses Personnelles</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <script src="/js/main.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+          <div class="logo">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 5V19M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="brand-name">Kinvest</div>
+        </div>
+      
+        <div class="nav-links">
+            <a href="/annee/<%= (annee-2) %>"><</a>            
+            <a href="/annee/<%= (annee-1) %>"><%= (annee-1) %></a>
+            <b><%= annee %></b>
+            <a href="/annee/<%= (parseInt(annee)+1) %>"><%= (parseInt(annee)+1) %></a>
+            <a href="/annee/<%= (parseInt(annee)+2) %>">></a>
+        </div>
+      
+        <a href="/login">
+            <span><% if (user) { %><%= user.email %><% } else { %>non connecté<% } %></span>
+            <a href="/logout">
+                <button class="try-now-btn">Se Déconnecter</button>
+            </a>
+        </a>
+    </nav>
+
+    <section class="hero" id="hero">
+        <h2>
+            Budget / Dépenses  année <%= annee %>
+        </h2>
+        <div style="display: flex; flex-flow: row;">
+            <a title="aller au bilan budget / dépenses par catégorie" href="/budget/<%= annee %>/bilan" style="margin:20px;">
+                <button class="try-now-btn">Bilan de l'année</button>
+            </a>
+            <a title="personnaliser la question relative à l'ensemble du budget et des dépenses de l'année" href="/conseil/<%= annee %>/question" style="margin:20px;">
+                <button class="try-now-btn">Conseils par IA</button>
+            </a>
+        </div>
+        <div style="display: flex; flex-direction: row;">
+            <div style="vertical-align: top;">
+                <h4>Budget</h4>
+                <table>
+                    <thead>
+                        <th align="left">Total</th>
+                        <th align="right"><% if (totalBudget[0].montant) {%><%= totalBudget[0].montant.toFixed(2) %> €<% } %></th>
+                        <th></th>
+                    </thead>
+                    <thead>
+                        <th align="left">Catégorie</th>
+                        <th></th>
+                        <th></th>
+                    </thead>
+                    <% for (let i = 0; i < categories.length; i++) { %>
+                        <tr>
+                            <td align="left">
+                                <%= categories[i].nom %>
+                            </td>
+                            <td align="right">
+                                <% for (let j = 0; j < budget.length; j++) { %>
+                                    <% if (budget[j].id_categorie == categories[i].id) { %>
+                                        <%= budget[j].montant.toFixed(2) %> €
+                                    <% } %>
+                                <% } %>
+                            </td>
+                            <td>
+                                <% for (let j = 0; j < budget.length; j++) { %>
+                                    <% if (budget[j].id_categorie == categories[i].id) { %>
+                                        <a title="modifier le budget pour la catégorie : <%= categories[i].nom %>" href="/budget/<%= budget[j].id_budget %>/categorie/<%= categories[i].id %>/modifier">
+                                            <button class="download-btn">Modifier</button>
+                                        </a>
+                                    <% } %>
+                                <% } %>
+                            </td>
+                        </tr>
+                    <% } %>
+                </table>
+            </div>
+            <div style="width: 50px;"></div>
+            <div style="vertical-align: top;">
+                <h4>Dépenses</h4>
+                <table>
+                    <thead>
+                        <th align="left" colspan="2">Total</th>
+                        <th align="right"><% if (totalDepense[0].montant) {%><%= totalDepense[0].montant.toFixed(2) %> €<% } %></th>
+                        <th colspan="2"></th>
+                    </thead>
+                    <thead>
+                        <th align="left">Date</th>
+                        <th align="left">Catégorie</th>
+                        <th></th>
+                        <th colspan="2">
+                            <a title="créer une nouvelle dépense" href="/depense/creer/annee/<%= annee %>">
+                                <button class="download-btn">Créer une dépense</button>
+                            </a>
+                        </th>
+                    </thead>
+                    <% for (let i = 0; i < transactions.length; i++) { %>
+                        <tr>
+                            <td>
+                                <%= transactions[i].date.toLocaleDateString("fr-FR") %>
+                            </td>
+                            <td>
+                                <%= transactions[i].categorie %>
+                            </td>
+                            <td align="right">
+                                <%= transactions[i].montant.toFixed(2) %> €
+                            </td>
+                            <td>
+                                <a title="modifier la dépense" href="/depense/<%= transactions[i].id %>/modifier">
+                                    <button class="download-btn">Modifier</button>
+                                </a>
+                            </td>
+                            <td> 
+                                <a title="supprimer la dépense" href="/depense/<%= transactions[i].id %>/supprimer">
+                                    <button class="download-btn">Supprimer</button>
+                                </a>
+                            </td>                        </tr>
+                    <% } %>
+                </table>
+            </div>
+        </div>
+    </section>
+  
+</body>
+</html>

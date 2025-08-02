@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kinvest - Gestion Intelligente des Dépenses Personnelles</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <script src="/js/main.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+          <div class="logo">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 5V19M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="brand-name">Kinvest</div>
+        </div>
+      
+        <div class="nav-links">
+            <a href="/annee/<%= (annee-2) %>"><</a>            
+            <a href="/annee/<%= (annee-1) %>"><%= (annee-1) %></a>
+            <b><%= annee %></b>
+            <a href="/annee/<%= (parseInt(annee)+1) %>"><%= (parseInt(annee)+1) %></a>
+            <a href="/annee/<%= (parseInt(annee)+2) %>">></a>
+        </div>
+      
+        <a href="/login">
+            <span><% if (user) { %><%= user.email %><% } else { %>non connecté<% } %></span>
+            <a href="/logout">
+                <button class="try-now-btn">Se Déconnecter</button>
+            </a>
+        </a>
+    </nav>
+
+    <section class="hero" id="hero">
+        <h2>
+            Bilan année <%= annee %>
+        </h2>
+        <table>
+            <thead>
+                <th></th>
+                <th align="left">Budget</th>
+                <th align="left">Dépenses</th>
+            </thead>
+            <thead>
+                <th align="left">Total</th>
+                <th align="right"><% if (totalBudget[0].montant) {%><%= totalBudget[0].montant.toFixed(2) %> €<% } %></th>
+                <th align="right"><% if (totalDepense[0].montant) {%><%= totalDepense[0].montant.toFixed(2) %> €<% } %></th>
+                <th>
+                    <a title="avoir des conseils pour le budget et les dépenses globales de l'année" href="/conseil/annee/<%= annee %>/categorie/all/budget/<%= totalBudget[0].montant %>/depense/<%= totalDepense[0].montant %>">
+                        <button class="download-btn">Conseil IA</button>
+                    </a>
+                </th>
+            </thead>
+            <% for (let i = 0; i < categories.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= categories[i].nom %>
+                    </td>
+                    <% var budgetCategorie = 0 %>
+                    <td align="right">
+                        <% for (let j = 0; j < budget.length; j++) { %>
+                            <% if (budget[j].id_categorie == categories[i].id) { %>
+                                <%= budget[j].montant.toFixed(2) %> €
+                                <% budgetCategorie = budget[j].montant %>
+                            <% } %>
+                        <% } %>
+                    </td>
+                    <% var depenseCategorie = 0 %>
+                    <td align="right">
+                        <% for (let j = 0; j < depense.length; j++) { %>
+                            <% if (depense[j].id_categorie == categories[i].id) { %>
+                                <%= depense[j].montant.toFixed(2) %> €
+                                <% var depenseCategorie = depense[j].montant %>
+                            <% } %>
+                        <% } %>
+                    </td>
+                    <td>
+                        <a title="avoir des conseils pour le budget et les dépenses de l'année pour la catégorie : <%= categories[i].nom %>" href="/conseil/annee/<%= annee %>/categorie/<%= categories[i].nom %>/budget/<%= budgetCategorie %>/depense/<%= depenseCategorie %>">
+                            <button class="download-btn">Conseil IA</button>
+                        </a>
+                    </td>
+                </tr>
+            <% } %>
+        </table>
+    </section>
+  
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kinvest - Gestion Intelligente des Dépenses Personnelles</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <script src="/js/main.js" defer></script>
+</head>
+<body>
+<!-- Barre de navigation -->
+<nav class="navbar">
+  <div class="logo-container">
+    <div class="logo">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 5V19M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="brand-name">Kinvest</div>
+  </div>
+
+  <div class="nav-links">
+    <a href="#presentation">Présentation</a>
+  </div>
+
+  <a href="/login">
+    <button class="try-now-btn">Se Connecter</button>
+  </a>
+</nav>
+
+<!-- Barre de progression pour le scroll -->
+<div class="scroll-progress-container">
+  <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+</div>
+
+<!-- Section principale -->
+<section class="hero" id="hero">
+  <h1>Gestion Intelligente des Dépenses Personnelles</h1>
+  <p>Avec notre plateforme, prenez l'avantage des outils intuitifs pour vous guider dans vos dépenses personnelles</p>
+
+  <!-- Effet de flou blanc en bas -->
+  <div class="blur-effect"></div>
+</section>
+
+<!-- Section de présentation (Bloc 2) -->
+<section class="presentation" id="presentation">
+  <div class="presentation-background">
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+  </div>
+
+  <h1>Présentation</h1>
+  <p>Parcourez les principales fonctionnalités de Kinvest.</p>
+
+  <!-- Contrôles de thème -->
+  <div class="theme-switcher">
+    <a href="#" class="theme-option active">Lumière</a>
+    <a href="#" class="theme-option">Sombre</a>
+  </div>
+
+  <!-- Carrousel avec téléphone et flèches de navigation -->
+  <div class="carousel-container">
+    <div class="carousel-arrow arrow-prev">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M15 18l-6-6 6-6"/>
+      </svg>
+    </div>
+
+    <div class="phone-frame">
+      <!-- Galerie d'images pour le carrousel -->
+      <div class="phone-carousel" id="phoneCarousel">
+        <img src="assets/phone.svg" alt="Dashboard Kinvest" class="phone-showcase phone-animation active" data-slide="0">
+        <img src="assets/phone.svg" alt="Budget Kinvest" class="phone-showcase phone-animation" data-slide="1">
+        <img src="assets/phone.svg" alt="Analyse Kinvest" class="phone-showcase phone-animation" data-slide="2">
+        <img src="assets/phone.svg" alt="Paramètres Kinvest" class="phone-showcase phone-animation" data-slide="3">
+      </div>
+      <div class="phone-reflection"></div>
+    </div>
+
+    <div class="carousel-arrow arrow-next">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 18l6-6-6-6"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Indicateurs du carrousel -->
+  <div class="carousel-indicators">
+    <div class="indicator active"></div>
+    <div class="indicator"></div>
+    <div class="indicator"></div>
+    <div class="indicator"></div>
+  </div>
+
+  <!-- Informations supplémentaires -->
+  <div class="features-preview">
+    <div class="feature">
+      <div class="feature-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L19 7V17L12 22L5 17V7L12 2Z" stroke="#2ecc71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 22V12" stroke="#2ecc71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M5 7L12 12L19 7" stroke="#2ecc71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3>Analyse avancée</h3>
+      <p>Visualisez vos dépenses avec des graphiques interactifs.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 20V10" stroke="#2ecc71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 20V4" stroke="#2ecc71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6 20V14" stroke="#2ecc71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3>Suivi de budget</h3>
+      <p>Définissez et suivez vos objectifs financiers mensuels.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" stroke="#2ecc71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 8V12" stroke="#2ecc71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 16H12.01" stroke="#2ecc71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3>Alertes intelligentes</h3>
+      <p>Recevez des notifications sur vos habitudes de dépenses.</p>
+    </div>
+  </div>
+</section>
+</body>
+</html>
